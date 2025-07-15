@@ -1,0 +1,24 @@
+sku,product_name,category,event_type,quantity_changed,price_per_unit,total_amount,remaining_quantity,event_date,notes
+TSHIRT001,Cotton T-Shirt,clothing,sale,-5,299.99,1499.95,75,2025-07-13 10:46:11,Weekend sale
+JEANS002,Blue Denim Jeans,clothing,sale,-3,899.99,2699.9700000000003,24,2025-07-13 10:46:11,Online order
+SHOES003,Sports Shoes,sports,sale,-2,1299.99,2599.98,21,2025-07-13 10:46:11,Store sale
+TSHIRT001,Cotton T-Shirt,clothing,restock,10,200.0,2000.0,85,2025-07-13 10:46:11,New stock arrival
+BAG004,Leather Handbag,clothing,sale,-1,1499.99,1499.99,10,2025-07-13 10:46:11,Premium customer
+SHOES003,Sports Shoes,sports,sale,-2,1299.99,2599.98,23,2025-07-13 10:46:05,Store sale
+BAG004,Leather Handbag,clothing,initial_stock,15,,,15,2025-07-13 10:46:05,Initial product submission
+TSHIRT001,Cotton T-Shirt,clothing,sale,-5,299.99,1499.95,45,2025-07-13 10:46:05,Weekend sale
+JEANS002,Blue Denim Jeans,clothing,sale,-3,899.99,2699.9700000000003,27,2025-07-13 10:46:05,Online order
+SHOES003,Sports Shoes,sports,sale,-2,1299.99,2599.98,21,2025-07-13 10:46:05,Store sale
+TSHIRT001,Cotton T-Shirt,clothing,restock,10,200.0,2000.0,60,2025-07-13 10:46:05,New stock arrival
+BAG004,Leather Handbag,clothing,sale,-1,1499.99,1499.99,14,2025-07-13 10:46:05,Premium customer
+SHOES003,Sports Shoes,sports,sale,-2,1299.99,2599.98,23,2025-07-13 10:46:05,Store sale
+TSHIRT001,Cotton T-Shirt,clothing,restock,10,200.0,2000.0,70,2025-07-13 10:46:05,New stock arrival
+BAG004,Leather Handbag,clothing,sale,-1,1499.99,1499.99,13,2025-07-13 10:46:05,Premium customer
+TSHIRT001,Cotton T-Shirt,clothing,restock,10,200.0,2000.0,70,2025-07-13 10:46:05,New stock arrival
+BAG004,Leather Handbag,clothing,sale,-1,1499.99,1499.99,12,2025-07-13 10:46:05,Premium customer
+SHOES003,Sports Shoes,sports,sale,-2,1299.99,2599.98,23,2025-07-13 10:46:05,Store sale
+TSHIRT001,Cotton T-Shirt,clothing,restock,10,200.0,2000.0,80,2025-07-13 10:46:05,New stock arrival
+BAG004,Leather Handbag,clothing,sale,-1,1499.99,1499.99,11,2025-07-13 10:46:05,Premium customer
+TSHIRT001,Cotton T-Shirt,clothing,initial_stock,50,,,50,2025-07-13 10:45:36,Initial product submission
+JEANS002,Blue Denim Jeans,clothing,initial_stock,30,,,30,2025-07-13 10:45:36,Initial product submission
+SHOES003,Sports Shoes,sports,initial_stock,25,,,25,2025-07-13 10:45:36,Initial product submission

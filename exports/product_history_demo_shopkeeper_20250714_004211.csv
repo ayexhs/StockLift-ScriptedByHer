@@ -1,0 +1,6 @@
+sku,product_name,category,event_type,quantity_changed,price_per_unit,total_amount,remaining_quantity,event_date,notes
+PH003,heels,clothing,sale,-33,689.0,22737.0,56,2025-07-13 19:11:57,
+PH003,heels,clothing,initial_stock,89,,,89,2025-07-13 19:11:27,Initial product submission
+PR003,Dress,clothing,sale,-30,599.0,17970.0,30,2025-07-13 19:09:50,
+PR003,Dress,clothing,restock,20,599.0,11980.0,60,2025-07-13 19:08:44,
+PR003,Dress,clothing,initial_stock,40,,,40,2025-07-13 19:08:07,Initial product submission
