@@ -22,6 +22,11 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 app.config['UPLOAD_FOLDER'] = '/tmp/uploads' if os.environ.get('VERCEL') else 'uploads'
 app.config['PROCESSED_FOLDER'] = '/tmp/processed' if os.environ.get('VERCEL') else 'processed'
 
+# Verify Google API key is available
+if not os.environ.get('GOOGLE_API_KEY'):
+    print("Warning: GOOGLE_API_KEY not found in environment variables")
+    print("Set it using: export GOOGLE_API_KEY=your-api-key")
+
 # Create directories if they don't exist
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['PROCESSED_FOLDER'], exist_ok=True)

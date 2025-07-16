@@ -128,20 +128,29 @@ pip install -r requirements.txt
 ```
 
 ### 4. **Configure Environment Variables**
+
+**Using export command:**
+```bash
+export GOOGLE_API_KEY=your-google-api-key
+```
+
+**Or create a .env file:**
 Create a `.env` file in the root directory:
 ```ini
-FLASK_ENV=development
-SECRET_KEY=your-secret-key
-DATABASE_URL=sqlite:///product_history.db
 GOOGLE_API_KEY=your-google-api-key
 ```
 
-### 5. **Run the Application**
+### 5. **Set Environment Variables**
+```bash
+export GOOGLE_API_KEY=your-google-api-key
+```
+
+### 6. **Run the Application**
 ```bash
 python app.py
 ```
 
-### 6. **Access the Application**
+### 7. **Access the Application**
 Open your browser and navigate to `http://localhost:5000`
 
 ---
@@ -305,10 +314,9 @@ Ensure your repository contains these files:
 4. Vercel will automatically detect it as a Python project
 
 #### 3. **Configure Environment Variables**
-In your Vercel project settings, add these environment variables:
+In your Vercel project settings, add this environment variable:
+
 ```bash
-FLASK_ENV=production
-SECRET_KEY=your-secret-key-here
 GOOGLE_API_KEY=your-google-api-key
 ```
 

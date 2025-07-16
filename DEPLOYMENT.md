@@ -43,13 +43,21 @@ StockLift-ScriptedByHer/
 
 ### 3. Environment Variables
 
-Add these in Vercel project settings → Environment Variables:
+Add this in Vercel project settings → Environment Variables:
 
 ```bash
-FLASK_ENV=production
-SECRET_KEY=your-super-secret-key-here
 GOOGLE_API_KEY=your-google-api-key
-DATABASE_URL=sqlite:///product_history.db
+```
+
+**For Local Development:**
+```bash
+export GOOGLE_API_KEY=your-google-api-key
+```
+
+**Quick Start:**
+```bash
+export GOOGLE_API_KEY=your-google-api-key
+python app.py
 ```
 
 ### 4. Deploy
