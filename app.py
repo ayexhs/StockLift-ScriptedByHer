@@ -18,6 +18,14 @@ load_dotenv()
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
+# Configure app for Vercel deployment
+app.config['UPLOAD_FOLDER'] = '/tmp/uploads' if os.environ.get('VERCEL') else 'uploads'
+app.config['PROCESSED_FOLDER'] = '/tmp/processed' if os.environ.get('VERCEL') else 'processed'
+
+# Create directories if they don't exist
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+os.makedirs(app.config['PROCESSED_FOLDER'], exist_ok=True)
+
 # Initialize models
 health_analyzer = ProductHealthAnalyzer()
 discount_calculator = SmartDiscountCalculator()
@@ -887,4 +895,6 @@ def campaign_generator():
 
 
 if __name__ == '__main__':
-    app.run(debug=True,  host='0.0.0.0', port=1234) 
+    # For local development
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, host='0.0.0.0', port=port) 

@@ -287,6 +287,47 @@ Open your browser and navigate to `http://localhost:5000`
 python app.py
 ```
 
+### Vercel Deployment
+
+StockLift is configured for easy deployment on Vercel. Follow these steps:
+
+#### 1. **Prepare Your Repository**
+Ensure your repository contains these files:
+- `vercel.json` - Vercel configuration
+- `requirements.txt` - Python dependencies
+- `runtime.txt` - Python version specification
+- `app.py` - Main Flask application
+
+#### 2. **Connect to Vercel**
+1. Go to [vercel.com](https://vercel.com) and sign in
+2. Click "New Project"
+3. Import your GitHub repository
+4. Vercel will automatically detect it as a Python project
+
+#### 3. **Configure Environment Variables**
+In your Vercel project settings, add these environment variables:
+```bash
+FLASK_ENV=production
+SECRET_KEY=your-secret-key-here
+GOOGLE_API_KEY=your-google-api-key
+```
+
+#### 4. **Deploy**
+1. Click "Deploy" in Vercel dashboard
+2. Vercel will automatically build and deploy your application
+3. Your app will be available at `https://your-project-name.vercel.app`
+
+#### 5. **Custom Domain (Optional)**
+- Go to your project settings in Vercel
+- Navigate to "Domains"
+- Add your custom domain
+
+#### **Important Notes for Vercel:**
+- File uploads are stored in `/tmp` directory (temporary storage)
+- Database files should use external services (MongoDB Atlas, etc.)
+- ML models are loaded on each request (consider caching)
+- Maximum execution time is 10 seconds for Hobby plan
+
 ---
 
 ## What's Next for StockLift
