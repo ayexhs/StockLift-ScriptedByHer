@@ -293,48 +293,66 @@ Open your browser and navigate to `http://localhost:5000`
 
 ### Local Development
 ```bash
+export GOOGLE_API_KEY=your-google-api-key
 python app.py
 ```
 
-### Vercel Deployment
+### Deploying to Render.com
 
-StockLift is configured for easy deployment on Vercel. Follow these steps:
+StockLift is ready for easy deployment on [Render.com](https://render.com). Follow these steps:
 
-#### 1. **Prepare Your Repository**
-Ensure your repository contains these files:
-- `vercel.json` - Vercel configuration
-- `requirements.txt` - Python dependencies
-- `runtime.txt` - Python version specification
-- `app.py` - Main Flask application
+#### 1. Prepare Your Repository
+- Ensure your repo contains:
+  - `app.py` (Flask app)
+  - `requirements.txt` (Python dependencies)
+  - `models/` directory (with your ML model files)
+  - `static/`, `templates/`, etc.
 
-#### 2. **Connect to Vercel**
-1. Go to [vercel.com](https://vercel.com) and sign in
-2. Click "New Project"
-3. Import your GitHub repository
-4. Vercel will automatically detect it as a Python project
+#### 2. Push to GitHub
+- Commit and push all your code and model files to your GitHub repository.
 
-#### 3. **Configure Environment Variables**
-In your Vercel project settings, add this environment variable:
+#### 3. Create a New Web Service on Render
+- Go to [render.com](https://render.com) and sign in with GitHub.
+- Click **“New +”** → **“Web Service”**.
+- Connect your GitHub repo and select your StockLift repository.
 
+#### 4. Configure the Service
+- **Name:** (Anything you like)
+- **Branch:** `main` (or your default branch)
+- **Build Command:** (leave blank; Render auto-installs from `requirements.txt`)
+- **Start Command:**
+  ```bash
+  gunicorn app:app
+  ```
+
+#### 5. Set Environment Variables
+- Click “Add Environment Variable”
+- **Key:** `GOOGLE_API_KEY`
+- **Value:** `your-google-api-key`
+
+#### 6. Deploy
+- Click **“Create Web Service”**
+- Wait for the build and deploy to finish (a few minutes).
+
+#### 7. Test Your App
+- Visit the Render-provided URL (e.g., `https://stocklift.onrender.com`)
+- Test all features, including ML model loading.
+
+---
+
+**Note:**
+- Render allows much larger deployments than Vercel (GBs, not MBs).
+- Your model files in the repo will be available to the app.
+- The free tier may sleep after inactivity.
+- Check the “Logs” tab in Render dashboard for errors.
+
+---
+
+**Quick Start for Local:**
 ```bash
-GOOGLE_API_KEY=your-google-api-key
+export GOOGLE_API_KEY=your-google-api-key
+python app.py
 ```
-
-#### 4. **Deploy**
-1. Click "Deploy" in Vercel dashboard
-2. Vercel will automatically build and deploy your application
-3. Your app will be available at `https://your-project-name.vercel.app`
-
-#### 5. **Custom Domain (Optional)**
-- Go to your project settings in Vercel
-- Navigate to "Domains"
-- Add your custom domain
-
-#### **Important Notes for Vercel:**
-- File uploads are stored in `/tmp` directory (temporary storage)
-- Database files should use external services (MongoDB Atlas, etc.)
-- ML models are loaded on each request (consider caching)
-- Maximum execution time is 10 seconds for Hobby plan
 
 ---
 
