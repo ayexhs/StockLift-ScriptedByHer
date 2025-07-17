@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask import Flask, render_template, request, jsonify, send_from_directory, session, redirect, url_for
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
@@ -428,6 +428,7 @@ def login_api():
         result = product_tracker.authenticate_shopkeeper(user_id, password)
         
         if result['success']:
+            session['shopkeeper_logged_in'] = True
             return jsonify(result)
         else:
             return jsonify(result), 401
@@ -897,6 +898,11 @@ def get_in_touch():
 @app.route('/campaign-generator')
 def campaign_generator():
     return render_template('campaign_generator.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('shopkeeper_logged_in', None)
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':

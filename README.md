@@ -7,7 +7,7 @@
 > **Transform your inventory management with AI-driven insights, festival-based clearance strategies, and smart discount optimization.**
 
 <p align="center">
-  <img src="static/img/photogenixai.jpg" alt="StockLift Logo" width="500"/>
+  <img src="static/impimages/readme intro.png.jpg" alt="StockLift Logo" width="500"/>
 </p>
 
 ---
@@ -22,6 +22,8 @@
 | 📦 **Bundle Recommendation Engine** | Cross-shopkeeper collaboration system for complementary product bundles and cost sharing. |
 | 📸 **Photogenix AI** | Professional product photography enhancement with background removal, replacement, and auto-enhancement. |
 | 🏪 **Shopkeeper Management** | Complete inventory tracking system with product history and performance analytics. |
+| 🪄 **Campaign Generator** | Instantly create, download, or copy ready-to-use festival campaigns (banners, messages, offers) tailored to your shop and region. |
+| 🌐 **Regional Festival Insights** | Location-specific festival dashboard with actionable analytics and sales opportunities for 100+ Indian cities. |
 
 ---
 

@@ -214,6 +214,8 @@ function displayRegionalFestivals(festivals) {
     sortedFestivals.forEach(festival => {
         const festivalCard = document.createElement('div');
         festivalCard.className = 'festival-card';
+        // Add data-category for filtering
+        festivalCard.setAttribute('data-category', (festival.category || '').toLowerCase().replace(/\s+/g, '_'));
         
         const daysUntil = festival.days_until;
         const urgencyClass = getUrgencyClass(daysUntil);
@@ -252,6 +254,8 @@ function displayRegionalFestivals(festivals) {
         
         container.appendChild(festivalCard);
     });
+    // Apply filter after rendering
+    filterFestivals();
 }
 
 
@@ -1033,12 +1037,21 @@ function displayFestivalInsights(insights) {
 // Filter festivals by category
 function filterFestivals() {
     const filterValue = document.getElementById('festivalFilter').value;
-    const festivalCards = document.querySelectorAll('.festival-card-comprehensive');
-    
+    // Main dashboard cards
+    const festivalCards = document.querySelectorAll('.festival-card');
     festivalCards.forEach(card => {
+        const category = card.getAttribute('data-category') || '';
+        if (filterValue === 'all' || category.includes(filterValue)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    // Modal cards (if modal is open)
+    const modalCards = document.querySelectorAll('.festival-card-comprehensive');
+    modalCards.forEach(card => {
         const categoryBadge = card.querySelector('.festival-category-badge');
         const category = categoryBadge ? categoryBadge.textContent.toLowerCase() : '';
-        
         if (filterValue === 'all' || category.includes(filterValue)) {
             card.style.display = 'block';
         } else {

@@ -379,9 +379,13 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
                     <p>Festival Based Clearance & Smart Discount Calculator</p>
                 </div>
         <div class="pretty-header-login">
-            <a href="/login"><i class="fas fa-store"></i> Shopkeeper Login</a>
-                    </div>
-                </div>
+  {% if session.get('shopkeeper_logged_in') %}
+    <a href="/logout" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  {% else %}
+    <a href="/login"><i class="fas fa-store"></i> Shopkeeper Login</a>
+  {% endif %}
+</div>
+    </div>
 
         <!-- Location Selector -->
        
@@ -909,164 +913,178 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
 
 
         <!-- Regional Festival Dashboard -->
-        <style>
+        <!-- <style>
         .festival-dashboard {
-            background: linear-gradient(135deg, #a18fff 0%, #8f5fff 100%);
-            border-radius: 2rem;
-            box-shadow: 0 8px 32px rgba(143,95,255,0.10);
-            padding: 2.5rem 3rem 2.5rem 3rem;
+            background: linear-gradient(120deg, #000000 0%, #c1a8fb 50%, #ffd47a 100%);
+            border-radius: 2.5rem;
+            box-shadow: 0 8px 40px rgba(143,95,255,0.18);
+            padding: 3rem 4vw 3rem 4vw;
             margin: 3rem auto;
             position: relative;
             overflow: hidden;
-            max-width: 96vw;
-            margin-left: 2vw;
-            margin-right: 2vw;
+            max-width: 98vw;
+            margin-left: 1vw;
+            margin-right: 1vw;
+            transition: box-shadow 0.3s;
+            animation: dashboardBgMove 12s ease-in-out infinite alternate;
+        }
+        @keyframes dashboardBgMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
         .festival-dashboard h2 {
             color: #fff;
-            font-size: 2.2rem;
+            font-size: 2.7rem;
             font-weight: 900;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-            text-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            letter-spacing: 2px;
+            margin-bottom: 2.5rem;
+            text-shadow: 0 8px 32px rgba(0,0,0,0.18);
             display: flex;
             align-items: center;
-            gap: 0.7rem;
+            gap: 1.2rem;
+            background: linear-gradient(90deg, #ffd47a 0%, #4f3292 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .festival-controls {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             margin-bottom: 2.5rem;
             flex-wrap: wrap;
             justify-content: center;
         }
         .festival-controls .control-group {
-            background: rgba(255,255,255,0.18);
-            border-radius: 1rem;
-            padding: 1rem 2rem;
+            background: rgba(255,255,255,0.25);
+            border-radius: 1.2rem;
+            padding: 1.2rem 2.2rem;
             display: flex;
             align-items: center;
-            gap: 1rem;
-            box-shadow: 0 2px 12px rgba(143,95,255,0.07);
+            gap: 1.2rem;
+            box-shadow: 0 2px 16px rgba(143,95,255,0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+            backdrop-filter: blur(8px);
+        }
+        .festival-controls .control-group:hover {
+            background: rgba(255,255,255,0.38);
+            box-shadow: 0 4px 24px rgba(143,95,255,0.13);
         }
         .festival-controls label {
             color: #fff;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
         }
         .festival-controls select {
-            border-radius: 0.7rem;
+            border-radius: 0.8rem;
             border: none;
-            padding: 0.5rem 1.2rem;
-            font-size: 1rem;
+            padding: 0.7rem 1.5rem;
+            font-size: 1.08rem;
             background: #fff;
-            color: #5e4a8c;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(143,95,255,0.07);
+            color: #6d3be7;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(143,95,255,0.09);
             outline: none;
-            transition: box-shadow 0.2s;
+            transition: box-shadow 0.2s, background 0.2s;
         }
         .festival-controls select:focus {
-            box-shadow: 0 0 0 2px #a18fff;
+            box-shadow: 0 0 0 2px #ffd47a;
+            background: #f3e6ff;
         }
         .festival-categories {
             margin-bottom: 2.5rem;
         }
         .festival-categories h3 {
             color: #fff;
-            font-size: 1.3rem;
-            font-weight: 800;
+            font-size: 1.4rem;
+            font-weight: 900;
             margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem;
+            letter-spacing: 0.5px;
         }
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
         .category-card {
-            background: rgba(255,255,255,0.85);
-            border-radius: 1.2rem;
-            box-shadow: 0 4px 24px rgba(143,95,255,0.08);
-            padding: 1.5rem 1.2rem;
+            background: rgba(255,255,255,0.35);
+            border-radius: 1.3rem;
+            box-shadow: 0 4px 32px rgba(143,95,255,0.18);
+            padding: 1.7rem 1.3rem;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             position: relative;
             overflow: hidden;
-            border-top: 5px solid #a18fff;
-            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 6px solid #ffd47a;
+            transition: transform 0.3s, box-shadow 0.3s, border-top 0.3s, background 0.3s;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.7s;
         }
         .category-card:hover {
-            transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 12px 32px rgba(143,95,255,0.15);
+            transform: translateY(-10px) scale(1.05) rotate(-1deg);
+            box-shadow: 0 16px 48px 0 #ffd47a55, 0 2px 16px #8f5fff33;
+            border-top: 6px solid #8f5fff;
+            background: rgba(255,255,255,0.55);
         }
-        .category-icon {
-            font-size: 2rem;
-            margin-bottom: 0.7rem;
-        }
-        .category-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #2d1e5f;
-            margin-bottom: 0.5rem;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px);}
+            to { opacity: 1; transform: translateY(0);}
         }
         .category-count {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 900;
-            color: #8f5fff;
-            margin-bottom: 0.3rem;
-        }
-        .category-badge {
-            background: linear-gradient(90deg, #ffd47a 0%, #ffb347 100%);
-            color: #fff;
-            font-size: 0.85rem;
-            font-weight: 700;
-            border-radius: 1rem;
-            padding: 0.2rem 0.8rem;
+            color: #ffd47a;
             margin-bottom: 0.5rem;
-            margin-right: 0.5rem;
-            display: inline-block;
+            text-shadow: 0 2px 8px #8f5fff33;
         }
-        .category-desc {
+        .category-festivals {
             color: #5e4a8c;
-            font-size: 0.95rem;
-            opacity: 0.9;
+            font-size: 1.05rem;
+            opacity: 0.92;
+            margin-top: 0.5rem;
         }
         .regional-festivals-section {
             margin-bottom: 2.5rem;
         }
         .regional-festivals-section h3 {
             color: #fff;
-            font-size: 1.2rem;
-            font-weight: 800;
+            font-size: 1.25rem;
+            font-weight: 900;
             margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem;
         }
         .festivals-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
         .festival-card {
-            background: rgba(255,255,255,0.92);
-            border-radius: 1.2rem;
-            box-shadow: 0 4px 24px rgba(143,95,255,0.08);
-            padding: 1.5rem 1.2rem;
+            background: rgba(255,255,255,0.38);
+            border-radius: 1.3rem;
+            box-shadow: 0 4px 32px rgba(143,95,255,0.18);
+            padding: 1.7rem 1.3rem;
             display: flex;
             flex-direction: column;
             position: relative;
             overflow: hidden;
-            border-left: 6px solid #8f5fff;
-            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 7px solid #ffd47a;
+            transition: transform 0.3s, box-shadow 0.3s, border-left 0.3s, background 0.3s;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.7s;
         }
         .festival-card:hover {
-            transform: translateY(-6px) scale(1.03);
-            box-shadow: 0 12px 32px rgba(143,95,255,0.15);
+            transform: translateY(-10px) scale(1.05) rotate(1deg);
+            box-shadow: 0 16px 48px 0 #ffd47a55, 0 2px 16px #8f5fff33;
+            border-left: 7px solid #8f5fff;
+            background: rgba(255,255,255,0.65);
         }
         .festival-header {
             display: flex;
@@ -1075,12 +1093,12 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
             margin-bottom: 0.7rem;
         }
         .festival-title {
-            font-size: 1.1rem;
-            font-weight: 700;
+            font-size: 1.15rem;
+            font-weight: 800;
             color: #2d1e5f;
         }
         .festival-date {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             color: #8f5fff;
             font-weight: 700;
         }
@@ -1090,11 +1108,12 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
             margin-bottom: 0.7rem;
         }
         .badge {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
             border-radius: 1rem;
             padding: 0.2rem 0.8rem;
             display: inline-block;
+            box-shadow: 0 2px 8px #ffd47a33;
         }
         .badge.regional { background: linear-gradient(90deg, #a18fff 0%, #8f5fff 100%); color: #fff; }
         .badge.urgent { background: linear-gradient(90deg, #ff7a7a 0%, #ffb347 100%); color: #fff; }
@@ -1104,45 +1123,47 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
         .badge.religious { background: linear-gradient(90deg, #ffb347 0%, #8f5fff 100%); color: #fff; }
         .festival-desc {
             color: #5e4a8c;
-            font-size: 0.97rem;
+            font-size: 1.05rem;
             margin-bottom: 0.7rem;
+            opacity: 0.95;
         }
         .festival-days-away {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 800;
             color: #ff7a7a;
             margin-bottom: 0.5rem;
         }
         .festival-shopping {
             color: #8f5fff;
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
         }
         .insights-btn {
-            background: linear-gradient(90deg, #a18fff 0%, #8f5fff 100%);
+            background: linear-gradient(90deg, #ffd47a 0%, #8f5fff 100%);
             color: #fff;
             border: none;
             border-radius: 1.2rem;
             padding: 0.7rem 1.5rem;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.05rem;
             margin-top: 0.7rem;
             cursor: pointer;
             box-shadow: 0 2px 12px rgba(143,95,255,0.10);
             transition: background 0.2s, transform 0.1s;
         }
         .insights-btn:hover {
-            background: linear-gradient(90deg, #8f5fff 0%, #6d3be7 100%);
+            background: linear-gradient(90deg, #8f5fff 0%, #ffd47a 100%);
             transform: translateY(-2px) scale(1.04);
+            color: #fff;
         }
         @media (max-width: 900px) {
             .festival-dashboard { padding: 1.2rem 1rem; }
             .categories-grid, .festivals-list { grid-template-columns: 1fr; }
-        }
-        </style>
+        } -->
+        <!-- </style> -->
         <div class="festival-dashboard" id="festival-dashboard">
             <h2><i class="fas fa-chart-line"></i> Regional Festival Dashboard</h2>
             <!-- Festival Controls -->
@@ -1163,6 +1184,7 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
                         <option value="cultural">Cultural</option>
                         <option value="harvest">Harvest</option>
                         <option value="national">National</option>
+                        <option value="regional">Regional</option>
                         <option value="modern">Modern</option>
                         <option value="seasonal">Seasonal</option>
                     </select>
