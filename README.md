@@ -75,8 +75,8 @@ Transform your product images with AI-powered tools:
 | **Background Removal** | AI-powered background elimination using U2Net |
 | **Background Replacement** | Studio and lifestyle backgrounds with lighting matching |
 | **Auto Enhancement** | Smart brightness and contrast adjustment |
-| **Cropping & Resizing** | Platform-specific dimensions for Amazon, Flipkart, etc. |
-| **Creative Content** | Marketplace-ready descriptions and attributes |
+| **Cropping & Resizing** | Platform-specific dimensions for Meesho etc. |
+| **Creative Content** | Marketplace-ready descriptions, tags and attributes |
 
 </div>
 <br>
