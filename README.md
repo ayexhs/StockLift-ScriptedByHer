@@ -68,6 +68,8 @@ Comprehensive festival database covering:
 
 Transform your product images with AI-powered tools:
 
+<div align="center">
+
 | Tool | Description |
 |------|-------------|
 | **Background Removal** | AI-powered background elimination using U2Net |
@@ -75,6 +77,8 @@ Transform your product images with AI-powered tools:
 | **Auto Enhancement** | Smart brightness and contrast adjustment |
 | **Cropping & Resizing** | Platform-specific dimensions for Amazon, Flipkart, etc. |
 | **Creative Content** | Marketplace-ready descriptions and attributes |
+
+</div>
 <br>
 <p align="center">
   <img src="readme imgs/photogenix indetail.gif" alt="StockLift Logo" width="700"/>
