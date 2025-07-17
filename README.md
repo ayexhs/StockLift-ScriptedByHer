@@ -62,11 +62,10 @@ Comprehensive festival database covering:
 
 # Photogenix AI - Product Photography Enhancement
 
-<p align="center">
+<p>
   <img src="readme imgs/photogenix gif.gif" alt="StockLift Logo" width="700"/>
 </p>
 
-<div align="center">
 
 Transform your product images with AI-powered tools:
 
@@ -78,9 +77,8 @@ Transform your product images with AI-powered tools:
 | **Cropping & Resizing** | Platform-specific dimensions for Meesho etc. |
 | **Creative Content** | Marketplace-ready descriptions, tags and attributes |
 
-</div>
 <br>
-<p align="center">
+<p >
   <img src="readme imgs/photogenix indetail.gif" alt="StockLift Logo" width="700"/>
 </p>
 
