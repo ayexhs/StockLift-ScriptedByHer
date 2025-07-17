@@ -66,6 +66,11 @@ Comprehensive festival database covering:
   <img src="readme imgs/photogenix gif.gif" alt="StockLift Logo" width="700"/>
 </p>
 
+> **Photogenix AI empowers sellers to create stunning, marketplace-ready product images in seconds.
+Enhance, retouch, and optimize your photos with advanced AI tools—no design skills required.**
+
+---
+
 
 Transform your product images with AI-powered tools:
 
