@@ -7,7 +7,7 @@
 > **Transform your inventory management with AI-driven insights, festival-based clearance strategies, and smart discount optimization.**
 
 <p align="center">
-  <img src="static/impimages/readme intro.png.jpg" alt="StockLift Logo" width="500"/>
+  <img src="readme imgs/stocklift into gif.gif" alt="StockLift Logo" width="500"/>
 </p>
 
 ---
