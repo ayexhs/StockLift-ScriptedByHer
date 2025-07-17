@@ -7,7 +7,7 @@
 > **Transform your inventory management with AI-driven insights, festival-based clearance strategies, and smart discount optimization.**
 
 <p align="center">
-  <img src="readme imgs/stocklift into gif.gif" alt="StockLift Logo" width="500"/>
+  <img src="readme imgs/stocklift into gif.gif" alt="StockLift Logo" width="700"/>
 </p>
 
 ---
@@ -17,13 +17,13 @@
 | Feature                          | Description                                                                 |
 |----------------------------------|-----------------------------------------------------------------------------|
 | 🎯 **Smart Product Health Analysis** | AI-powered assessment using XGBoost models to classify products as Healthy, At Risk, or Dead Stock based on multiple factors. |
-| 🎉 **Festival-Based Clearance** | Cultural festival mapping for targeted promotions with 50+ Indian festivals and regional events. |
+| 🌐 **Regional Festival Insights** | Location-specific festival dashboard with actionable analytics and sales opportunities for 100+ Indian cities. |
 | 💰 **Intelligent Discount Calculator** | ML-driven pricing optimization considering product health, festival timing, and market trends. |
 | 📦 **Bundle Recommendation Engine** | A cross-shopkeeper collaboration system for creating complementary product bundles and facilitating cost sharing. |
 | 📸 **Photogenix AI** | Professional product photography enhancement with background removal, replacement, and auto-enhancement. |
 | 🏪 **Shopkeeper Management** | Complete inventory tracking system with product history and performance analytics. |
 | 🪄 **Campaign Generator** | Instantly create, download, or copy ready-to-use festival campaigns (banners, messages, offers) tailored to your shop and region. |
-| 🌐 **Regional Festival Insights** | Location-specific festival dashboard with actionable analytics and sales opportunities for 100+ Indian cities. |
+
 
 ---
 
@@ -103,6 +103,54 @@ StockLift-ScriptedByHer/
 
 ---
 
+## Application Flow (Overview)
+
+```mermaid
+flowchart TD
+    A[StockLift]
+    A --> B[Photogenix AI]
+    A --> C[Dashboard]
+    A --> D[Campaign Generator]
+
+    %% Photogenix AI details
+    B --> B1[Background Removal]
+    B --> B2[Background Replacement]
+    B --> B3[Auto Enhancement]
+    B --> B4[Cropping & Resizing]
+    B --> B5[Creative Content Generation]
+    B1 --> B6[Enhanced Product Images]
+    B2 --> B6
+    B3 --> B6
+    B4 --> B6
+    B5 --> B6
+    B6 --> B7[Optimized Product Listing]
+
+    %% Dashboard details
+    C --> C1[Smart Discount Calculator]
+    C --> C2[Create Custom Bundle]
+    C --> C3[Regional Festival Dashboard]
+    C --> C4[Shopkeeper Dashboard]
+    C1 --> C5[Product Health Analysis]
+    C1 --> C6[Optimal Discount Recommendations]
+    C2 --> C7[Bundle Suggestions]
+    C2 --> C8[Collaboration]
+    C3 --> C9[Festival Insights]
+    C3 --> C10[Promotion Opportunities]
+    C4 --> C11[Inventory Management]
+    C4 --> C12[Sales Tracking]
+    C4 --> C13[Analytics & Export]
+
+    %% Campaign Generator details
+    D --> D1[Generate Festival Campaigns]
+    D --> D2[Download/Copy Campaigns]
+    D --> D3[Personalized Banners & Messages]
+    D1 --> D4[Select Festival & Region]
+    D1 --> D5[Auto-generate Content]
+    D3 --> D6[Ready-to-use Campaign Assets]
+```
+
+---
+
 ## Installation
 
 Follow these steps to set up StockLift on your local machine:
@@ -157,43 +205,58 @@ Open your browser and navigate to `http://localhost:5000`
 
 ---
 
-## API Endpoints
+### **API Endpoints (Collapsible, Grouped, with Tables)**
 
-### Product Analysis
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/analyze-product` | POST | Analyze product health and get recommendations |
-| `/api/health-stats` | GET | Get overall inventory health statistics |
+<details>
+<summary><b>Product Analysis</b></summary>
 
-### Festival Management
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/festivals` | GET | Get upcoming festivals for a location |
-| `/api/all-festivals` | GET | Get all festivals with details |
+| Endpoint                | Method | Description                                    |
+|-------------------------|--------|------------------------------------------------|
+| `/api/analyze-product`  | POST   | Analyze product health and get recommendations |
+| `/api/health-stats`     | GET    | Get overall inventory health statistics        |
+</details>
+
+<details>
+<summary><b>Festival Management</b></summary>
+
+| Endpoint                          | Method | Description                                 |
+|------------------------------------|--------|---------------------------------------------|
+| `/api/festivals`                  | GET    | Get upcoming festivals for a location       |
+| `/api/all-festivals`              | GET    | Get all festivals with details              |
 | `/api/product-festival-opportunities` | POST | Get product-specific festival opportunities |
+</details>
 
-### Bundle Management
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/create-bundle` | POST | Create custom bundles with multiple shopkeepers |
-| `/api/bundle-recommendations` | POST | Get bundle suggestions for a product |
+<details>
+<summary><b>Bundle Management</b></summary>
 
-### Shopkeeper Management
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/register-shopkeeper` | POST | Register new shopkeeper |
-| `/api/add-product` | POST | Add new product to inventory |
-| `/api/record-sale-event` | POST | Record sale or restock events |
-| `/api/shopkeeper-products/<user_id>` | GET | Get shopkeeper's product list |
+| Endpoint                   | Method | Description                                 |
+|----------------------------|--------|---------------------------------------------|
+| `/api/create-bundle`       | POST   | Create custom bundles with multiple shopkeepers |
+| `/api/bundle-recommendations` | POST | Get bundle suggestions for a product        |
+</details>
 
-### Image Processing (Photogenix AI)
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/process/background_removal` | POST | Remove image backgrounds |
-| `/process/enhance` | POST | Enhance product images |
-| `/process/replace_background` | POST | Replace backgrounds |
-| `/process/crop_resize` | POST | Crop and resize images |
-| `/process/make_professional` | POST | Create professional product photos |
+<details>
+<summary><b>Shopkeeper Management</b></summary>
+
+| Endpoint                           | Method | Description                        |
+|-------------------------------------|--------|------------------------------------|
+| `/api/register-shopkeeper`          | POST   | Register new shopkeeper            |
+| `/api/add-product`                  | POST   | Add new product to inventory       |
+| `/api/record-sale-event`            | POST   | Record sale or restock events      |
+| `/api/shopkeeper-products/<user_id>`| GET    | Get shopkeeper's product list      |
+</details>
+
+<details>
+<summary><b>Image Processing (Photogenix AI)</b></summary>
+
+| Endpoint                    | Method | Description                        |
+|-----------------------------|--------|------------------------------------|
+| `/process/background_removal` | POST | Remove image backgrounds           |
+| `/process/enhance`            | POST | Enhance product images             |
+| `/process/replace_background` | POST | Replace backgrounds                |
+| `/process/crop_resize`        | POST | Crop and resize images             |
+| `/process/make_professional`  | POST | Create professional product photos |
+</details>
 
 ---
 
@@ -248,16 +311,21 @@ Open your browser and navigate to `http://localhost:5000`
 
 ---
 
-## Technology Stack
+### **Technology Stack (Collapsible, with Table and Icon)**
 
-| Component | Technology |
-|-----------|------------|
-| **Backend Framework** | Flask (Python) |
-| **Frontend** | HTML5, CSS3, JavaScript |
-| **Machine Learning** | XGBoost, Scikit-learn, TensorFlow |
-| **Image Processing** | U2Net (background removal) |
-| **Database** | SQLite with pandas |
-| **Deployment** | Local development server |
+<details open>
+<summary><b>View Technology Stack</b></summary>
+
+| Component            | Technology                        |
+|----------------------|-----------------------------------|
+| Backend Framework    | Flask (Python)                    |
+| Frontend             | HTML5, CSS3, JavaScript           |
+| Machine Learning     | XGBoost, Scikit-learn, TensorFlow |
+| Image Processing     | U2Net (background removal)        |
+| Database             | SQLite with pandas                |
+| Deployment           | Local/Render.com                  |
+
+</details>
 
 ---
 
@@ -268,26 +336,6 @@ Open your browser and navigate to `http://localhost:5000`
 - Modern web browser
 - 4GB+ RAM (for ML model processing)
 - Google API key (for location services)
-
----
-
-## Security Features
-
-- Input validation and sanitization
-- File upload restrictions and validation
-- Session management and authentication
-- Error handling and secure logging
-- CORS protection
-
----
-
-## Performance Optimization
-
-- ML model caching for faster predictions
-- Efficient database queries with indexing
-- Image processing optimization
-- Responsive UI components
-- Lazy loading for better user experience
 
 ---
 
