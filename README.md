@@ -66,9 +66,9 @@ Comprehensive festival database covering:
   <img src="readme imgs/photogenix gif.gif" alt="StockLift Logo" width="700"/>
 </p>
 
-Transform your product images with AI-powered tools:
-
 <div align="center">
+
+Transform your product images with AI-powered tools:
 
 | Tool | Description |
 |------|-------------|
