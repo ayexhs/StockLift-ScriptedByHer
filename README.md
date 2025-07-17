@@ -8,7 +8,6 @@
 
 <p align="center">
   <img src="readme imgs/stocklift into gif.gif" alt="StockLift Logo" width="700"/>
-  <img src="readme imgs/stocklift into gif.gif" alt="StockLift Logo" width="700"/>
 </p>
 
 ---
@@ -76,6 +75,7 @@ Transform your product images with AI-powered tools:
 | **Auto Enhancement** | Smart brightness and contrast adjustment |
 | **Cropping & Resizing** | Platform-specific dimensions for Amazon, Flipkart, etc. |
 | **Creative Content** | Marketplace-ready descriptions and attributes |
+<br>
 <p align="center">
   <img src="readme imgs/photogenix indetail.gif" alt="StockLift Logo" width="700"/>
 </p>
