@@ -8,6 +8,7 @@
 
 <p align="center">
   <img src="readme imgs/stocklift into gif.gif" alt="StockLift Logo" width="700"/>
+  <img src="readme imgs/stocklift into gif.gif" alt="StockLift Logo" width="700"/>
 </p>
 
 ---
