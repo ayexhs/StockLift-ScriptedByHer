@@ -62,7 +62,7 @@ Comprehensive festival database covering:
 
 # Photogenix AI - Product Photography Enhancement
 
-<p>
+<p align="center">
   <img src="readme imgs/photogenix gif.gif" alt="StockLift Logo" width="700"/>
 </p>
 
