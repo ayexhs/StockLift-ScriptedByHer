@@ -19,7 +19,7 @@
 | 🎯 **Smart Product Health Analysis** | AI-powered assessment using XGBoost models to classify products as Healthy, At Risk, or Dead Stock based on multiple factors. |
 | 🎉 **Festival-Based Clearance** | Cultural festival mapping for targeted promotions with 50+ Indian festivals and regional events. |
 | 💰 **Intelligent Discount Calculator** | ML-driven pricing optimization considering product health, festival timing, and market trends. |
-| 📦 **Bundle Recommendation Engine** | Cross-shopkeeper collaboration system for complementary product bundles and cost sharing. |
+| 📦 **Bundle Recommendation Engine** | A cross-shopkeeper collaboration system for creating complementary product bundles and facilitating cost sharing. |
 | 📸 **Photogenix AI** | Professional product photography enhancement with background removal, replacement, and auto-enhancement. |
 | 🏪 **Shopkeeper Management** | Complete inventory tracking system with product history and performance analytics. |
 | 🪄 **Campaign Generator** | Instantly create, download, or copy ready-to-use festival campaigns (banners, messages, offers) tailored to your shop and region. |
