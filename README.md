@@ -31,7 +31,7 @@
 
 StockLift is your AI-powered partner for turning dead stock into festival sales gold. Here’s how the platform guides you from inventory analysis to sales success:
 
----
+
 
 ### 1. Shopkeeper Onboarding & Inventory Management
 
@@ -39,7 +39,6 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
 - Add products to your inventory, including details like name, category, price, and quantity.
 - Track all inventory changes, sales events, and restocks in one place.
 
----
 
 ### 2. Product Health Analysis
 
@@ -50,7 +49,6 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
   - 🔴 **Dead Stock** (0.0–0.4): Requires immediate action
 - **Actionable insights** help you prioritize which products to promote, discount, or bundle.
 
----
 
 ### 3. Festival Dashboard & Insights
 
@@ -61,9 +59,8 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
   - Trending styles and marketing opportunities
 - **Location-based insights** for 100+ Indian cities ensure your promotions are always timely and relevant.
 
----
 
-### 4. 💰 Discount Calculator
+### 4. Discount Calculator
 
 - Use the AI-powered Discount Calculator to set the **optimal price** for each product.
 - The tool considers:
@@ -73,9 +70,8 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
   - Historical sales data
 - Get **personalized discount recommendations** to maximize revenue and clear slow-moving stock.
 
----
 
-### 5. 🤝 Custom Bundling & Bundle Recommendations
+### 5. Custom Bundling & Bundle Recommendations
 
 - Create custom product bundles by combining complementary items from your inventory or collaborating with other shopkeepers.
 - The system suggests **high-impact bundles** tailored for upcoming festivals and customer preferences.
@@ -84,9 +80,9 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
   - Increase average order value
   - Offer unique deals during festival sales
 
----
 
-### 6. 🏪 Shopkeeper Dashboard
+
+### 6. Shopkeeper Dashboard
 
 - Your command center for business management:
   - View real-time inventory health and analytics
@@ -94,9 +90,8 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
   - Export data for further analysis
 - Stay on top of your business with actionable insights and easy-to-use tools.
 
----
 
-### 7. 🪄 Campaign Generator
+### 7. Campaign Generator
 
 - Instantly generate ready-to-use festival campaigns:
   - Banners, messages, and offers tailored to your shop and region
