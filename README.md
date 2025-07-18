@@ -39,6 +39,10 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
 - Add products to your inventory, including details like name, category, price, and quantity.
 - Track all inventory changes, sales events, and restocks in one place.
 
+<p>
+  <img src="readme imgs/shopping_dashboard.gif" alt="StockLift Logo" width="700"/>
+</p>
+
 
 ### 2. Product Health Analysis
 
@@ -58,6 +62,10 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
   - Predicted demand boost
   - Trending styles and marketing opportunities
 - **Location-based insights** for 100+ Indian cities ensure your promotions are always timely and relevant.
+
+<p>
+  <img src="readme imgs/festival_dashboard.gif" alt="StockLift Logo" width="700"/>
+</p>
 
 
 ### 4. Discount Calculator
