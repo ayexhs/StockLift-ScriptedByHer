@@ -105,18 +105,6 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
 
 ---
 
-### 8. 📸 Photogenix AI – Product Photography Enhancement
-
-> **Create stunning, marketplace-ready product images in seconds.**
-
-- **Background Removal:** Instantly remove backgrounds with AI (U2Net)
-- **Background Replacement:** Choose from studio, lifestyle, or custom backgrounds with lighting matching
-- **Auto Enhancement:** Smartly adjust brightness, contrast, and color
-- **Cropping & Resizing:** Get platform-specific dimensions for Meesho, Amazon, Flipkart, and more
-- **Creative Content:** Generate marketplace-ready descriptions, tags, and attributes
-
----
-
 ## 🛠️ Example User Flow
 
 1. **Log in** as a shopkeeper and add your products.
@@ -370,58 +358,8 @@ Open your browser and navigate to `http://localhost:5000`
 
 ---
 
-## Flow of the Application
 
-### 1. **Product Health Analysis**
-- User inputs product details (name, category, price, stock quantity, etc.)
-- AI model analyzes health based on multiple factors
-- System provides health score and status classification
-- Recommendations are generated for improvement
-
-### 2. **Festival-Based Clearance**
-- System identifies upcoming festivals relevant to product category
-- Calculates demand boost potential for each festival
-- Suggests optimal timing for promotions
-- Provides marketing opportunity insights
-
-### 3. **Smart Discount Calculation**
-- Analyzes product health score and festival timing
-- Considers market competition and historical performance
-- Generates optimal discount recommendations
-- Calculates potential revenue impact
-
-### 4. **Bundle Recommendations**
-- Identifies complementary products from other shopkeepers
-- Creates cost-effective bundle combinations
-- Facilitates cross-shopkeeper collaboration
-- Optimizes for festival-specific demand
-
-### 5. **Photogenix AI Processing**
-- User uploads product image
-- AI removes background automatically
-- System enhances image quality
-- User can replace background or apply professional styling
-- Final image is optimized for marketplace platforms
-
----
-
-## Dashboard Features
-
-### Main Dashboard
-- Overall inventory health statistics
-- Dead stock rescue potential (₹ value)
-- Upcoming festival opportunities
-- Real-time analytics and insights
-
-### Shopkeeper Dashboard
-- Product inventory management
-- Sale event tracking and history
-- Performance analytics and trends
-- Data export capabilities
-
----
-
-### **Technology Stack (Collapsible, with Table and Icon)**
+### **Technology Stack**
 
 <details open>
 <summary><b>View Technology Stack</b></summary>
