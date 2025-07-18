@@ -24,68 +24,114 @@
 | 🏪 **Shopkeeper Management** | Complete inventory tracking system with product history and performance analytics. |
 | 🪄 **Campaign Generator** | Instantly create, download, or copy ready-to-use festival campaigns (banners, messages, offers) tailored to your shop and region. |
 
+---
+
+## 🚀 How StockLift Works: End-to-End Flow
+
+StockLift is your AI-powered partner for turning dead stock into festival sales gold. Here’s how the platform guides you from inventory analysis to sales success:
 
 ---
 
-## Product Health Analysis
+### 1. 🏪 Shopkeeper Onboarding & Inventory Management
 
-StockLift uses advanced machine learning to analyze product health and provide actionable insights.
-
-**Health Categories:**
-- 🟢 **Healthy** (Score: 0.7-1.0) - Products performing well
-- 🟡 **At Risk** (Score: 0.4-0.7) - Products needing attention  
-- 🔴 **Dead Stock** (Score: 0.0-0.4) - Products requiring immediate action
-
-**Analysis Factors:**
-- Days in stock
-- Price depreciation trends
-- Demand patterns
-- Seasonality factors
-- Quantity levels
-
-## Festival-Based Clearance Engine
-
-Comprehensive festival database covering:
-
-| Festival Type | Examples |
-|---------------|----------|
-| **National Festivals** | Diwali, Holi, Raksha Bandhan, Eid |
-| **Regional Festivals** | Pongal, Onam, Bihu, Lohri |
-| **Seasonal Events** | Wedding season, Back-to-school, Monsoon sales |
-| **Cultural Events** | College fests, Sports events, Office parties |
-
-**Features:**
-- Product-festival relevance mapping
-- Demand boost predictions
-- Marketing opportunity identification
-- Trending style recommendations
-
-# Photogenix AI - Product Photography Enhancement
-
-> **Photogenix AI empowers sellers to create stunning, marketplace-ready product images in seconds.
-Enhance, retouch, and optimize your photos with advanced AI tools—no design skills required.**
-
-<p align="center">
-  <img src="readme imgs/photogenix gif.gif" alt="StockLift Logo" width="700"/>
-</p>
+- Register as a shopkeeper and set up your shop profile.
+- Add products to your inventory, including details like name, category, price, and quantity.
+- Track all inventory changes, sales events, and restocks in one place.
 
 ---
 
+### 2. 🎯 Product Health Analysis
 
-Transform your product images with AI-powered tools:
+- StockLift’s AI analyzes your inventory using advanced machine learning models.
+- Each product receives a **health score**:
+  - 🟢 **Healthy** (0.7–1.0): Performing well
+  - 🟡 **At Risk** (0.4–0.7): Needs attention
+  - 🔴 **Dead Stock** (0.0–0.4): Requires immediate action
+- Analysis factors include:
+  - Days in stock
+  - Price depreciation trends
+  - Demand patterns
+  - Seasonality
+  - Quantity levels
+- **Actionable insights** help you prioritize which products to promote, discount, or bundle.
 
-| Tool | Description |
-|------|-------------|
-| **Background Removal** | AI-powered background elimination using U2Net |
-| **Background Replacement** | Studio and lifestyle backgrounds with lighting matching |
-| **Auto Enhancement** | Smart brightness and contrast adjustment |
-| **Cropping & Resizing** | Platform-specific dimensions for Meesho etc. |
-| **Creative Content** | Marketplace-ready descriptions, tags and attributes |
+---
 
-<br>
-<p >
-  <img src="readme imgs/photogenix indetail.gif" alt="StockLift Logo" width="700"/>
-</p>
+### 3. 🎉 Festival Dashboard & Insights
+
+- Access a comprehensive dashboard of upcoming **national, regional, and seasonal festivals**.
+- For each festival, see:
+  - Relevant product categories
+  - Predicted demand boost
+  - Trending styles and marketing opportunities
+- **Location-based insights** for 100+ Indian cities ensure your promotions are always timely and relevant.
+
+---
+
+### 4. 💰 Discount Calculator
+
+- Use the AI-powered Discount Calculator to set the **optimal price** for each product.
+- The tool considers:
+  - Product health
+  - Festival timing
+  - Market trends
+  - Historical sales data
+- Get **personalized discount recommendations** to maximize revenue and clear slow-moving stock.
+
+---
+
+### 5. 🤝 Custom Bundling & Bundle Recommendations
+
+- Create custom product bundles by combining complementary items from your inventory or collaborating with other shopkeepers.
+- The system suggests **high-impact bundles** tailored for upcoming festivals and customer preferences.
+- Bundling helps:
+  - Clear dead stock
+  - Increase average order value
+  - Offer unique deals during festival sales
+
+---
+
+### 6. 🏪 Shopkeeper Dashboard
+
+- Your command center for business management:
+  - View real-time inventory health and analytics
+  - Track sales events and product performance
+  - Export data for further analysis
+- Stay on top of your business with actionable insights and easy-to-use tools.
+
+---
+
+### 7. 🪄 Campaign Generator
+
+- Instantly generate ready-to-use festival campaigns:
+  - Banners, messages, and offers tailored to your shop and region
+- Download or copy campaigns to use across your marketing channels
+- Make every festival a sales opportunity with minimal effort
+
+---
+
+### 8. 📸 Photogenix AI – Product Photography Enhancement
+
+> **Create stunning, marketplace-ready product images in seconds.**
+
+- **Background Removal:** Instantly remove backgrounds with AI (U2Net)
+- **Background Replacement:** Choose from studio, lifestyle, or custom backgrounds with lighting matching
+- **Auto Enhancement:** Smartly adjust brightness, contrast, and color
+- **Cropping & Resizing:** Get platform-specific dimensions for Meesho, Amazon, Flipkart, and more
+- **Creative Content:** Generate marketplace-ready descriptions, tags, and attributes
+
+---
+
+## 🛠️ Example User Flow
+
+1. **Log in** as a shopkeeper and add your products.
+2. **Analyze inventory health** to identify slow-moving or at-risk products.
+3. **Check the Festival Dashboard** for upcoming sales opportunities.
+4. **Use the Discount Calculator** to set the best prices for festival sales.
+5. **Create custom bundles** to offer attractive deals.
+6. **Monitor everything** from the Shopkeeper Dashboard.
+7. **Generate campaigns** and enhance product images with Photogenix AI.
+8. **Boost your sales** and turn dead stock into profit!
 
 ---
 
@@ -93,27 +139,49 @@ Transform your product images with AI-powered tools:
 
 ```
 StockLift-ScriptedByHer/
-├── app.py                 # Main Flask application
-├── models/               # AI/ML models and business logic
-│   ├── product_health.py      # Product health analyzer
-│   ├── festival_engine.py     # Festival promotion engine
-│   ├── discount_calculator.py # Smart discount calculator
-│   ├── bundle_calculator.py   # Bundle recommendation engine
-│   ├── location_service.py    # Location-based services
-│   └── product_tracker.py     # Product tracking system
-├── templates/            # HTML templates
-│   ├── index.html            # Main dashboard
-│   ├── shopkeeper_dashboard.html # Shopkeeper interface
-│   └── indexphoto.html        # Photogenix AI interface
-├── static/              # CSS, JS, and assets
-│   ├── css/                 # Stylesheets
-│   ├── js/                  # JavaScript files
-│   ├── img/                 # Images and icons
-│   └── backgrounds/         # Background images for Photogenix
-├── u2net/              # Background removal AI model
-├── uploads/            # File upload directory
-├── processed/          # Processed images
-└── exports/            # Data export files
+├── app.py                  # Main Flask application
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
+├── DEPLOYMENT.md           # Render.com deployment guide
+├── product_history.db      # SQLite database for product and shopkeeper data
+├── test_app.py             # System and module test script
+├── models/                 # AI/ML models and business logic
+│   ├── product_health.py           # Product health analyzer
+│   ├── festival_engine.py          # Festival promotion engine
+│   ├── discount_calculator.py      # Smart discount calculator
+│   ├── bundle_calculator.py        # Bundle recommendation engine
+│   ├── location_service.py         # Location-based services
+│   ├── product_tracker.py          # Product tracking system
+│   ├── bundle_model.pkl            # Bundle ML model
+│   ├── discount_model.pkl          # Discount ML model
+│   ├── xgboost_health_model.pkl    # Product health ML model
+│   └── __init__.py
+├── templates/              # HTML templates (Jinja2)
+│   ├── index.html
+│   ├── shopkeeper_dashboard.html
+│   ├── indexphoto.html
+│   ├── campaign_generator.html
+│   ├── get_in_touch.html
+│   ├── landing.html
+│   ├── login.html
+│   └── landing.css
+├── static/                 # Static assets (CSS, JS, images)
+│   ├── css/
+│   ├── js/
+│   ├── img/
+│   ├── impimages/
+│   └── backgrounds/
+├── u2net/                  # Background removal AI model
+│   ├── infer.py
+│   ├── model/
+│   │   ├── u2net.py
+│   │   └── __init__.py
+│   └── u2netp.pth
+├── uploads/                # Uploaded product images
+├── processed/              # Processed/enhanced images
+├── exports/                # Data export files (CSV)
+├── readme imgs/            # Images and GIFs for README
+└── .gitignore              # Git ignore rules
 ```
 
 ---
