@@ -123,8 +123,6 @@ Enhance, retouch, and optimize your photos with advanced AI tools—no design sk
   <img src="readme imgs/photogenix gif.gif" alt="StockLift Logo" width="700"/>
 </p>
 
----
-
 
 Transform your product images with AI-powered tools:
 
