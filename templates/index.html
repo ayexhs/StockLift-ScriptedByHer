@@ -152,7 +152,8 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        height: 400px; /* Fixed height for all cards */
+        height: 420px; /* Increased fixed height for better alignment */
+        justify-content: space-between;
     }
     .feature-card::before {
         content: '';
@@ -191,6 +192,10 @@
         margin-bottom: 1.2rem;
         opacity: 0.9;
         flex-grow: 1; /* Allow paragraph to take available space */
+        min-height: 60px; /* Ensure minimum height for consistent spacing */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .feature-btn {
         background: linear-gradient(90deg, #a18fff 0%, #8f5fff 100%);
@@ -207,6 +212,8 @@
         box-shadow: 0 4px 16px rgba(143, 95, 255, 0.2);
         margin-top: auto; /* Push button to bottom */
         align-self: center; /* Center the button */
+        flex-shrink: 0; /* Prevent button from shrinking */
+        width: fit-content; /* Ensure button width fits content */
     }
     .feature-btn:hover {
         background: linear-gradient(90deg, #8f5fff 0%, #6d3be7 100%);
@@ -236,7 +243,7 @@
         min-width: 250px;
         max-width: 320px;
         height: auto; /* Allow natural height on mobile */
-        min-height: 350px; /* Minimum height to maintain consistency */
+        min-height: 380px; /* Increased minimum height for better alignment */
       }
     }
     @media (max-width: 600px) {
@@ -249,7 +256,7 @@
       .feature-card {
         min-width: 220px;
         padding: 1.2rem;
-        min-height: 320px; /* Slightly smaller minimum height for mobile */
+        min-height: 350px; /* Increased minimum height for better alignment */
       }
     }
     </style>
@@ -603,6 +610,29 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
             box-shadow: 0 4px 24px rgba(143,95,255,0.08);
             padding: 2rem 1.5rem 1.5rem 1.5rem;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .forms-row .analysis-section,
+        .forms-row .bundle-section {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .forms-row .product-form,
+        .forms-row .bundle-form {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .forms-row .btn-primary {
+            margin-top: auto;
+            align-self: center;
+            width: fit-content;
         }
         @media (max-width: 900px) {
             .forms-row {
@@ -667,6 +697,7 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
             <div>
                 <div class="bundle-section">
                     <h2><i class="fas fa-handshake"></i> Create Custom Bundle</h2>
+                    <p class="feature-description">Combine multiple products from different sellers to create attractive festival bundles. Perfect for cross-selling and increasing order value during peak shopping seasons. Includes smart discount calculations for bundle pricing. Connect with local sellers and maximize festival sales opportunities.</p>
                     <form id="bundleForm" class="bundle-form">
                         <div class="form-row">
                             <div class="form-group">
