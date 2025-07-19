@@ -46,7 +46,7 @@ try:
         shop_name="Demo Fashion Store",
         password="demo123",
         email="demo@gmail.com",
-        phone="+91-9876543210",
+        phone="9876543210",
         location="Mumbai"
     )
     print("Demo shopkeeper created successfully")
@@ -148,44 +148,107 @@ def analyze_product():
             'location': data.get('location', 'mumbai')
         }
         
-        # Analyze product health
-        health_score = health_analyzer.analyze_health(product_data)
+        try:
+            # Analyze product health
+            health_score = health_analyzer.analyze_health(product_data)
+        except Exception as e:
+            print(f"Health analysis error: {e}")
+            # Fallback health score calculation
+            days_in_stock = product_data.get('days_in_stock', 0)
+            if days_in_stock < 30:
+                health_score = 0.8
+            elif days_in_stock < 90:
+                health_score = 0.6
+            elif days_in_stock < 180:
+                health_score = 0.4
+            else:
+                health_score = 0.2
         
-        # Get location data
-        location_data = location_service.get_location_info(product_data['location'])
+        try:
+            # Get location data
+            location_data = location_service.get_location_info(product_data['location'])
+        except Exception as e:
+            print(f"Location service error: {e}")
+            location_data = {'name': product_data['location'], 'region': 'India'}
         
-        # Get festival recommendations
-        festival_result = festival_engine.get_festival_recommendations(
-            product_data, location_data
-        )
+        try:
+            # Get festival recommendations
+            festival_result = festival_engine.get_festival_recommendations(
+                product_data, location_data
+            )
+        except Exception as e:
+            print(f"Festival engine error: {e}")
+            festival_result = {'upcoming_festivals': [], 'recommended_festivals': []}
         
-        # Get product-specific festival opportunities
-        product_opportunities = festival_engine.get_product_festival_opportunities(
-            product_data['name'], product_data['location']
-        )
+        try:
+            # Get product-specific festival opportunities
+            product_opportunities = festival_engine.get_product_festival_opportunities(
+                product_data['name'], product_data['location']
+            )
+        except Exception as e:
+            print(f"Product festival opportunities error: {e}")
+            product_opportunities = {'opportunities': [], 'total_opportunities': 0}
         
-        # Get discount recommendations
-        discount_result = discount_calculator.calculate_discount(
-            product_data, health_score, festival_result
-        )
+        try:
+            # Get discount recommendations
+            discount_result = discount_calculator.calculate_discount(
+                product_data, health_score, festival_result
+            )
+        except Exception as e:
+            print(f"Discount calculator error: {e}")
+            # Fallback discount calculation
+            price = product_data.get('price', 0)
+            if health_score < 0.3:
+                discount_percent = 40
+            elif health_score < 0.6:
+                discount_percent = 20
+            else:
+                discount_percent = 10
+            
+            discount_result = {
+                'recommended_discount': discount_percent,
+                'new_price': price * (1 - discount_percent / 100),
+                'price_reduction': price * (discount_percent / 100),
+                'expected_revenue': price * (1 - discount_percent / 100) * product_data.get('stock_quantity', 0),
+                'risk_score': (1 - health_score) * 100,
+                'health_status': 'At Risk' if health_score < 0.6 else 'Healthy',
+                'discount_category': 'High' if discount_percent > 30 else 'Medium' if discount_percent > 15 else 'Low',
+                'reasoning': [f'Based on {health_score:.1%} health score, {discount_percent}% discount recommended']
+            }
         
-        # Get bundle recommendations
-        bundle_result = bundle_calculator.calculate_bundle_recommendations(
-            product_data,
-            location=product_data['location'],
-            festival=festival_result.get('recommended_festival')
-        )
+        try:
+            # Get bundle recommendations
+            recommended_festival = festival_result.get('recommended_festival')
+            if isinstance(recommended_festival, list) and len(recommended_festival) > 0:
+                festival_name = recommended_festival[0].get('name', None)
+            elif isinstance(recommended_festival, dict):
+                festival_name = recommended_festival.get('name', None)
+            else:
+                festival_name = None
+                
+            bundle_result = bundle_calculator.calculate_bundle_recommendations(
+                product_data,
+                location=product_data['location'],
+                festival=festival_name
+            )
+        except Exception as e:
+            print(f"Bundle calculator error: {e}")
+            bundle_result = {'bundles': [], 'total_bundles': 0}
         
-        # Calculate rescue score
-        rescue_score = health_analyzer.calculate_rescue_score(
-            product_data, festival_result, discount_result
-        )
+        try:
+            # Calculate rescue score
+            rescue_score = health_analyzer.calculate_rescue_score(
+                product_data, festival_result, discount_result
+            )
+        except Exception as e:
+            print(f"Rescue score error: {e}")
+            rescue_score = health_score * 100
         
         # Combine results
         result = {
             'product': product_data,
             'health_score': health_score,
-            'health_status': health_analyzer.get_health_status(health_score),
+            'health_status': health_analyzer.get_health_status(health_score) if hasattr(health_analyzer, 'get_health_status') else ('Healthy' if health_score > 0.6 else 'At Risk' if health_score > 0.3 else 'Dead'),
             'discount_recommendations': discount_result,
             'festival_recommendations': festival_result,
             'product_festival_opportunities': product_opportunities,
@@ -194,10 +257,12 @@ def analyze_product():
             'location_data': location_data
         }
         
+        print(f"Analysis completed successfully. Health score: {health_score}, Discount: {discount_result.get('recommended_discount', 'N/A')}%")
         return jsonify(result)
         
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        print(f"General analyze-product error: {e}")
+        return jsonify({'error': f'Analysis failed: {str(e)}'}), 500
 
 @app.route('/api/festivals')
 def get_festivals():
