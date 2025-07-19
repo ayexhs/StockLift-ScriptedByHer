@@ -389,8 +389,93 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
 
         <!-- Location Selector -->
        
-        <!-- Features Dashboard (replaces Health Statistics Dashboard) -->
+        <!-- Health Statistics Dashboard -->
+        <div id="healthStats" class="health-stats" style="display: none;">
+            <h2><i class="fas fa-chart-pie"></i> Inventory Health Overview</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Products</h3>
+                    <div class="value" id="totalProducts">-</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Dead Stock</h3>
+                    <div class="value" id="deadStock">-</div>
+                </div>
+                <div class="stat-card">
+                    <h3>At Risk</h3>
+                    <div class="value" id="atRisk">-</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Healthy</h3>
+                    <div class="value" id="healthy">-</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Rescue Potential</h3>
+                    <div class="value" id="rescuePotential">₹-</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Upcoming Opportunities</h3>
+                    <div class="value" id="upcomingOpportunities">-</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Dashboard -->
         <style>
+        /* Health Stats Styling */
+        .health-stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2rem;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.15);
+            color: #fff;
+        }
+        
+        .health-stats h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        
+        .stat-card h3 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        
+        .stat-card .value {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 900;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        
         .features-dashboard {
             display: flex;
             justify-content: center;
@@ -730,7 +815,261 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
             <div id="bundleDetails" class="bundle-details"></div>
         </div>
 
+        <!-- Analysis Results Section -->
+        <div id="resultsSection" class="results-section" style="display: none;">
+            <h2><i class="fas fa-chart-line"></i> Analysis Results</h2>
+            
+            <!-- Health Metrics -->
+            <div class="health-metrics">
+                <h3><i class="fas fa-heartbeat"></i> Product Health</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <label>Health Score</label>
+                        <div class="value" id="healthScoreDisplay">-</div>
+                    </div>
+                    <div class="metric-card">
+                        <label>Health Status</label>
+                        <div class="value" id="healthStatusDisplay">-</div>
+                    </div>
+                    <div class="metric-card">
+                        <label>Stock Age</label>
+                        <div class="value" id="stockAgeDisplay">-</div>
+                    </div>
+                    <div class="metric-card">
+                        <label>Stock Quantity</label>
+                        <div class="value" id="stockQuantityDisplay">-</div>
+                    </div>
+                    <div class="metric-card">
+                        <label>Sales Velocity</label>
+                        <div class="value" id="salesVelocityDisplay">-</div>
+                    </div>
+                    <div class="metric-card">
+                        <label>Risk Score</label>
+                        <div class="value" id="riskScoreDisplay">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discount Calculator Results -->
+            <div class="discount-calculator-results">
+                <h3><i class="fas fa-percentage"></i> Smart Discount Recommendations</h3>
+                <div class="discount-grid">
+                    <div class="discount-card">
+                        <label>Original Price</label>
+                        <div class="value" id="originalPrice">₹-</div>
+                    </div>
+                    <div class="discount-card">
+                        <label>Recommended Discount</label>
+                        <div class="value highlight" id="recommendedDiscount">-%</div>
+                    </div>
+                    <div class="discount-card">
+                        <label>Discounted Price</label>
+                        <div class="value" id="discountedPrice">₹-</div>
+                    </div>
+                    <div class="discount-card">
+                        <label>Total Savings</label>
+                        <div class="value" id="totalSavings">₹-</div>
+                    </div>
+                    <div class="discount-card">
+                        <label>Expected Revenue</label>
+                        <div class="value" id="expectedRevenue">₹-</div>
+                    </div>
+                </div>
+                <div class="discount-strategy">
+                    <h4><i class="fas fa-lightbulb"></i> Strategy</h4>
+                    <p id="discountStrategy">-</p>
+                </div>
+            </div>
+
+            <!-- Sales Recommendations -->
+            <div class="sales-recommendations">
+                <h3><i class="fas fa-bullseye"></i> Sales Strategy</h3>
+                <div class="recommendations-grid">
+                    <div class="recommendation-card">
+                        <h4><i class="fas fa-users"></i> Target Audience</h4>
+                        <p id="targetAudience">-</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h4><i class="fas fa-tags"></i> Pricing Strategy</h4>
+                        <p id="pricingStrategy">-</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h4><i class="fas fa-megaphone"></i> Marketing Approach</h4>
+                        <p id="marketingApproach">-</p>
+                    </div>
+                    <div class="recommendation-card">
+                        <h4><i class="fas fa-clock"></i> Timeline</h4>
+                        <p id="salesTimeline">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Festival Recommendations -->
+            <div class="festival-recommendations-section">
+                <h3><i class="fas fa-calendar-alt"></i> Festival Opportunities</h3>
+                <div id="festivalRecommendations" class="festival-recommendations">
+                    <div class="no-data">Loading festival recommendations...</div>
+                </div>
+            </div>
+        </div>
+
         <style>
+            /* Results Section Styling */
+            .results-section {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 2rem;
+                padding: 3rem;
+                margin: 3rem 0;
+                box-shadow: 0 8px 32px rgba(102, 126, 234, 0.15);
+                color: #fff;
+            }
+            
+            .results-section h2 {
+                color: #fff;
+                font-size: 2.5rem;
+                font-weight: 900;
+                margin-bottom: 2rem;
+                text-align: center;
+                text-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            }
+            
+            .results-section h3 {
+                color: #fff;
+                font-size: 1.8rem;
+                font-weight: 800;
+                margin-bottom: 1.5rem;
+                display: flex;
+                align-items: center;
+                gap: 0.8rem;
+            }
+            
+            .metrics-grid, .discount-grid, .recommendations-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .metric-card, .discount-card, .recommendation-card {
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 1rem;
+                padding: 1.5rem;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            
+            .metric-card:hover, .discount-card:hover, .recommendation-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            }
+            
+            .metric-card label, .discount-card label {
+                color: rgba(255, 255, 255, 0.9);
+                font-size: 0.9rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                display: block;
+            }
+            
+            .metric-card .value, .discount-card .value {
+                color: #fff;
+                font-size: 1.5rem;
+                font-weight: 900;
+                text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            }
+            
+            .discount-card .value.highlight {
+                color: #ffd47a;
+                font-size: 2rem;
+            }
+            
+            .recommendation-card h4 {
+                color: #ffd47a;
+                font-size: 1.2rem;
+                font-weight: 800;
+                margin-bottom: 0.8rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .recommendation-card p {
+                color: rgba(255, 255, 255, 0.95);
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .discount-strategy {
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 1rem;
+                padding: 1.5rem;
+                margin-top: 1.5rem;
+            }
+            
+            .discount-strategy h4 {
+                color: #ffd47a;
+                font-size: 1.3rem;
+                font-weight: 800;
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .discount-strategy p {
+                color: rgba(255, 255, 255, 0.95);
+                font-size: 1.1rem;
+                line-height: 1.7;
+            }
+            
+            .festival-recommendations-section {
+                margin-top: 2rem;
+            }
+            
+            .festival-recommendations {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .recommendation-item {
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 1rem;
+                padding: 1.5rem;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            
+            .recommendation-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+            
+            .recommendation-header h4 {
+                color: #ffd47a;
+                font-size: 1.2rem;
+                font-weight: 800;
+            }
+            
+            .relevance-score {
+                background: rgba(255, 212, 122, 0.2);
+                color: #ffd47a;
+                padding: 0.3rem 0.8rem;
+                border-radius: 1rem;
+                font-size: 0.8rem;
+                font-weight: 700;
+            }
+            
+            .no-data {
+                color: rgba(255, 255, 255, 0.7);
+                text-align: center;
+                font-style: italic;
+                padding: 2rem;
+            }
+            
             .location-selector-wrapper {
             display: flex;
                 justify-content: center;
