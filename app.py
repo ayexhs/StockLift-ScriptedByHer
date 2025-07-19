@@ -17,10 +17,12 @@ from models.product_tracker import ProductTracker
 load_dotenv()
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
-
+app.secret_key = 'your-very-secret-key' 
 # Configure app for Vercel deployment
 app.config['UPLOAD_FOLDER'] = '/tmp/uploads' if os.environ.get('VERCEL') else 'uploads'
 app.config['PROCESSED_FOLDER'] = '/tmp/processed' if os.environ.get('VERCEL') else 'processed'
+
+
 
 # Verify Google API key is available
 if not os.environ.get('GOOGLE_API_KEY'):
