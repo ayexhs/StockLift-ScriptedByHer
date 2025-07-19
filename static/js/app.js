@@ -454,7 +454,7 @@ function displayProductFestivalOpportunities(opportunitiesData) {
             <div class="recommendation-header">
                 <h4>${opportunity.festival_name}</h4>
             </div>
-            <div class="opportunity-details">
+                        <div class="opportunity-details">
                 <p class="promotion-reason"><strong>Why/How to Promote:</strong> ${opportunity.promotion_reason}</p>
                 <div class="festival-meta">
                     <span class="date"><i class="fas fa-calendar"></i> ${formatDate(opportunity.date)}</span>
