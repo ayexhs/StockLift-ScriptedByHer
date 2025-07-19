@@ -1819,6 +1819,7 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
         </div>
 
         <!-- Shopkeeper Dashboard Section (Only visible when logged in) -->
+        {% if session.get('shopkeeper_logged_in') %}
         <div id="shopkeeperDashboard" class="shopkeeper-dashboard" style="display: none;">
             <h2><i class="fas fa-store"></i> My Shop Dashboard</h2>
             
@@ -1994,6 +1995,7 @@ Streamline your inventory, maximize profits, and make every festival a sales opp
                 </div>
             </div>
         </div>
+        {% endif %}
 
     </div>
 
