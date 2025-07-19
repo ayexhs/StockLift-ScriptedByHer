@@ -5,31 +5,29 @@ let currentLocation = 'mumbai';
 
 let bundleAnalytics = {};
 
+// Immediately hide dashboard on page load to prevent flash for logged-out users
+(function() {
+  var dash = document.getElementById('shopkeeperDashboard');
+  if (dash) dash.style.display = 'none';
+})();
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
+    // Always hide dashboard on load
+    var dash = document.getElementById('shopkeeperDashboard');
+    if (dash) dash.style.display = 'none';
+
+    // Only show dashboard if user is authenticated
+    if (checkUserAuth()) {
+        showShopkeeperDashboard();
+    } else {
+        showLoggedOutUser();
+    }
+
+    // Load public data (not shopkeeper-specific)
     loadHealthStats();
     loadRegionalFestivals();
     loadFestivalCategories();
-    
-    // Check if user is logged in with proper timing
-    if (window.location.search.includes('login=success')) {
-        // If we just logged in, wait a bit longer for localStorage to be ready
-        setTimeout(() => {
-            console.log('Login success detected, checking auth...');
-            if (!checkUserAuth()) {
-                // If still not authenticated, retry once more
-                setTimeout(() => {
-                    console.log('Retrying auth check...');
-                    checkUserAuth();
-                }, 500);
-            }
-        }, 200);
-    } else {
-        // Normal auth check
-        setTimeout(() => {
-            checkUserAuth();
-        }, 100);
-    }
     
     // Form event listeners
     document.getElementById('productForm').addEventListener('submit', handleProductAnalysis);
@@ -58,9 +56,8 @@ function checkUserAuth() {
             console.log('Parsed user data:', user);
             
             if (user && user.user_id) {
-                console.log('User authenticated, showing dashboard for:', user.user_id);
+                console.log('User authenticated for:', user.user_id);
                 showLoggedInUser(user);
-                showShopkeeperDashboard();
                 return true;
             } else {
                 console.error('Invalid user data structure:', user);
@@ -74,7 +71,6 @@ function checkUserAuth() {
         }
     } else {
         console.log('No user data found, showing logged out interface');
-        showLoggedOutUser();
         return false;
     }
 }
@@ -108,12 +104,15 @@ function showShopkeeperDashboard() {
         dashboard.style.display = 'block';
         console.log('Shopkeeper dashboard displayed');
         
-        // Load data with a small delay to ensure DOM is ready
-        setTimeout(() => {
-            loadShopkeeperStats();
-            loadProducts();
-            loadHistory();
-        }, 100);
+        // Only load data if user is logged in
+        const userData = localStorage.getItem('shopkeeper_user');
+        if (userData) {
+            setTimeout(() => {
+                loadShopkeeperStats();
+                loadProducts();
+                loadHistory();
+            }, 100);
+        }
     } else {
         console.error('Shopkeeper dashboard element not found');
     }
