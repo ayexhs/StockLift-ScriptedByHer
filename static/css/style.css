@@ -268,7 +268,7 @@ body {
 
 .result-card:hover {
     border-color: #8f5fff;
-    background: #fff;
+    background: #faf8ff;
     box-shadow: 0 8px 25px rgba(143,95,255,0.13);
     transform: translateY(-2px);
 }
@@ -356,7 +356,13 @@ body {
 .recommendation-item:hover {
     transform: translateX(8px);
     box-shadow: 0 8px 25px rgba(143,95,255,0.13);
-    background: #fff;
+    background: #faf8ff;
+}
+
+.recommendation-item:focus,
+.recommendation-item:active {
+    background: #faf8ff !important;
+    outline: none;
 }
 
 .recommendation-item.festival {
