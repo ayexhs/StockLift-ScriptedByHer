@@ -18,9 +18,9 @@ load_dotenv()
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = 'your-very-secret-key' 
-# Configure app for Vercel deployment
-app.config['UPLOAD_FOLDER'] = '/tmp/uploads' if os.environ.get('VERCEL') else 'uploads'
-app.config['PROCESSED_FOLDER'] = '/tmp/processed' if os.environ.get('VERCEL') else 'processed'
+# Configure app for deployment
+app.config['UPLOAD_FOLDER'] = 'uploads'
+app.config['PROCESSED_FOLDER'] = 'processed'
 
 
 
@@ -672,28 +672,16 @@ def download_file(filename):
 
 
 # -------------------------------------Photogenix--------------------------------------
-from flask import Flask, render_template, request, send_from_directory, jsonify
-import os
-from werkzeug.utils import secure_filename
-from PIL import Image, ImageEnhance, ImageFilter, ImageOps
+from PIL import ImageEnhance, ImageFilter, ImageOps
 import io
 from u2net.infer import run_u2net
-import numpy as np
-import cv2
 import google.generativeai as genai
-from dotenv import load_dotenv
 import json
 import re
-load_dotenv()
 
-
-app.config['UPLOAD_FOLDER'] = 'uploads'
-app.config['PROCESSED_FOLDER'] = 'processed'
-
-os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-os.makedirs(app.config['PROCESSED_FOLDER'], exist_ok=True)
-
-genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
+# Configure Google AI if API key is available
+if os.environ.get("GOOGLE_API_KEY"):
+    genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 @app.route('/photogenix')
 def photogenix():
@@ -839,9 +827,7 @@ def batch_process():
     # Stub: Replace with real batch processing logic
     return jsonify({'status': 'Batch processing stub'})
 
-import numpy as np
-from PIL import Image
-import os
+# Helper functions for image processing
 
 def get_dominant_color(img):
     img = img.convert('RGB').resize((64, 64))
