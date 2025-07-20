@@ -1,12 +1,4 @@
-# Core build tools (compatible with Python 3.11)
-setuptools==68.2.2
-wheel==0.41.2
-pip==23.3.1
-
-# Ensure Python 3.11 compatibility
-typing-extensions==4.7.1
-
-# Web framework and dependencies
+# Core dependencies (Python 3.11 compatible)
 Flask==2.3.3
 Werkzeug==2.3.7
 Jinja2==3.1.2
@@ -15,16 +7,15 @@ itsdangerous==2.1.2
 click==8.1.7
 blinker==1.6.3
 
-# Data processing and ML
+# Data processing
 numpy==1.24.3
 pandas==2.0.3
 scikit-learn==1.3.0
 xgboost==1.7.6
 mlxtend==0.22.0
 
-# Deep Learning (CPU only for Render compatibility)
+# Deep Learning (CPU only)
 tensorflow-cpu==2.13.0
-keras==2.13.1
 
 # HTTP and API
 requests==2.31.0
@@ -40,27 +31,24 @@ pytz==2023.3
 # Geospatial
 geopy==2.3.0
 
-# Visualization and Dashboards
+# Visualization
 plotly==5.15.0
 dash==2.11.1
 dash-bootstrap-components==1.4.1
-dash-core-components==2.0.0
-dash-html-components==2.0.0
-dash-table==5.0.0
 
 # Image processing
 Pillow==10.0.0
 opencv-python-headless==4.8.0.76
 
-# AI and ML services
+# AI services
 google-generativeai==0.3.1
 
-# Environment and configuration
+# Environment
 python-dotenv==1.0.0
 
 # Production server
 gunicorn==21.2.0
 
-# Additional dependencies for compatibility
+# Compatibility
 six==1.16.0
 typing-extensions==4.7.1 

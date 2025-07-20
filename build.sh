@@ -4,9 +4,9 @@ set -o errexit
 
 echo "🚀 Starting StockLift build process..."
 
-# Upgrade pip and setuptools first
-echo "📦 Upgrading pip and setuptools..."
-pip install --upgrade pip setuptools wheel
+# Check Python version
+echo "🐍 Python version:"
+python --version
 
 # Install requirements
 echo "📥 Installing Python dependencies..."
