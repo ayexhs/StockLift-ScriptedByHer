@@ -68,7 +68,7 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
 </p>
 
 
-### 4. Discount Calculator
+### 4. Discount Calculator && Custom Bundling & Bundle Recommendations
 
 - Use the AI-powered Discount Calculator to set the **optimal price** for each product.
 - The tool considers:
@@ -76,11 +76,7 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
   - Festival timing
   - Market trends
   - Historical sales data
-- Get **personalized discount recommendations** to maximize revenue and clear slow-moving stock.
-
-
-### 5. Custom Bundling & Bundle Recommendations
-
+- Get **personalized discount recommendations** to maximize revenue and clear slow-moving stock. 
 - Create custom product bundles by combining complementary items from your inventory or collaborating with other shopkeepers.
 - The system suggests **high-impact bundles** tailored for upcoming festivals and customer preferences.
 - Bundling helps:
@@ -88,9 +84,12 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
   - Increase average order value
   - Offer unique deals during festival sales
 
+<p align="center">
+  <img src="readme imgs/bundle.gif" alt="StockLift Logo" width="700"/>
+</p>
 
 
-### 6. Shopkeeper Dashboard
+### 7. Shopkeeper Dashboard
 
 - Your command center for business management:
   - View real-time inventory health and analytics
@@ -99,7 +98,7 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
 - Stay on top of your business with actionable insights and easy-to-use tools.
 
 
-### 7. Campaign Generator
+### 8. Campaign Generator
 
 - Instantly generate ready-to-use festival campaigns:
   - Banners, messages, and offers tailored to your shop and region
