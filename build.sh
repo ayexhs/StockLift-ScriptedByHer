@@ -8,9 +8,9 @@ echo "🚀 Starting StockLift build process..."
 echo "🐍 Python version:"
 python --version
 
-# Install requirements
+# Install requirements with --no-build-isolation to avoid setuptools issues
 echo "📥 Installing Python dependencies..."
-pip install -r requirements.txt
+pip install --no-build-isolation -r requirements.txt
 
 # Create necessary directories
 echo "📁 Creating directories..."
