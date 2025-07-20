@@ -43,18 +43,7 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
   <img src="readme imgs/shopping_dashboard.gif" alt="StockLift Logo" width="700"/>
 </p>
 
-
-### 2. Product Health Analysis
-
-- StockLift’s AI analyzes your inventory using advanced machine learning models.
-- Each product receives a **health score**:
-  - 🟢 **Healthy** (0.7–1.0): Performing well
-  - 🟡 **At Risk** (0.4–0.7): Needs attention
-  - 🔴 **Dead Stock** (0.0–0.4): Requires immediate action
-- **Actionable insights** help you prioritize which products to promote, discount, or bundle.
-
-
-### 3. Festival Dashboard & Insights
+### 2. Festival Dashboard & Insights
 
 - Access a comprehensive dashboard of upcoming **national, regional, and seasonal festivals**.
 - For each festival, see:
@@ -68,7 +57,7 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
 </p>
 
 
-### 4. Discount Calculator && Custom Bundling & Bundle Recommendations
+### 3. Discount Calculator, Product Health Analysis, Custom Bundling & Bundle Recommendations
 
 - Use the AI-powered Discount Calculator to set the **optimal price** for each product.
 - The tool considers:
@@ -77,6 +66,12 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
   - Market trends
   - Historical sales data
 - Get **personalized discount recommendations** to maximize revenue and clear slow-moving stock. 
+- StockLift’s AI analyzes your inventory using advanced machine learning models.
+- Each product receives a **health score**:
+  - 🟢 **Healthy** (0.7–1.0): Performing well
+  - 🟡 **At Risk** (0.4–0.7): Needs attention
+  - 🔴 **Dead Stock** (0.0–0.4): Requires immediate action
+- **Actionable insights** help you prioritize which products to promote, discount, or bundle.
 - Create custom product bundles by combining complementary items from your inventory or collaborating with other shopkeepers.
 - The system suggests **high-impact bundles** tailored for upcoming festivals and customer preferences.
 - Bundling helps:
@@ -89,21 +84,16 @@ StockLift is your AI-powered partner for turning dead stock into festival sales 
 </p>
 
 
-### 7. Shopkeeper Dashboard
-
-- Your command center for business management:
-  - View real-time inventory health and analytics
-  - Track sales events and product performance
-  - Export data for further analysis
-- Stay on top of your business with actionable insights and easy-to-use tools.
-
-
-### 8. Campaign Generator
+### 4. Campaign Generator
 
 - Instantly generate ready-to-use festival campaigns:
   - Banners, messages, and offers tailored to your shop and region
 - Download or copy campaigns to use across your marketing channels
 - Make every festival a sales opportunity with minimal effort
+
+<p align="center">
+  <img src="readme imgs/campaign.gif" alt="StockLift Logo" width="700"/>
+</p>
 
 ---
 
