@@ -457,6 +457,24 @@ python app.py
 
 ---
 
+## Dependencies & Licenses
+
+| Library / Tool         | Version    | License                              | Official Link                                              |
+|-----------------------|------------|--------------------------------------|------------------------------------------------------------|
+| Flask                 | 2.3.0      | BSD-3-Clause                         | [Flask](https://palletsprojects.com/p/flask/)              |
+| pandas                | 2.0.0      | BSD-3-Clause                         | [pandas](https://pandas.pydata.org/)                       |
+| numpy                 | 1.24.0     | BSD-3-Clause                         | [numpy](https://numpy.org/)                                |
+| scikit-learn          | 1.3.0      | BSD-3-Clause                         | [scikit-learn](https://scikit-learn.org/)                  |
+| xgboost               | 1.7.0      | Apache License 2.0                   | [xgboost](https://xgboost.readthedocs.io/)                 |
+| tensorflow            | 2.13.0     | Apache License 2.0                   | [tensorflow](https://www.tensorflow.org/)                  |
+| geopy                 | 2.3.0      | MIT License                          | [geopy](https://geopy.readthedocs.io/)                     |
+| U^2-Net               | -          | GNU GPL v3.0                         | [U^2-Net](https://github.com/xuebinqin/U-2-Net)            |
+| GenAI (IBM)           | -          | Apache License 2.0                   | [GenAI](https://github.com/IBM/genai)                      |
+| OpenAI API (GPT)      | -          | Proprietary (OpenAI Terms of Service) | [OpenAI API](https://openai.com/api/)                      |
+| YOLOv5                | -          | GNU GPL v3.0                         | [YOLOv5](https://github.com/ultralytics/yolov5)            |
+
+---
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
